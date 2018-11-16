@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-</LinearLayout>
+    android:columnCount="2"
+    android:rowCount="10">
+    <TextView
+        android:textSize="20sp"
+        android:text="Email:"
+        android:id="@+id/label_email"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <EditText
+        android:inputType="textEmailAddress"
+        android:id="@+id/input_email"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:textSize="20sp"
+        android:text="Password:"
+        android:id="@+id/label_passwd"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/input_passwd"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:textSize="20sp"
+        android:text="Login as:"
+        android:id="@+id/label_login"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <Button
+        android:text="Rider"
+        android:id="@+id/btn_rider"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <Button
+        android:text="Driver"
+        android:id="@+id/btn_driver"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <Button
+        android:text="Admin"
+        android:id="@+id/btn_admin"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="Not registered yet?"
+        android:id="@+id/label_notreg"
+        android:layout_marginLeft="130dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <Button
+        android:text="Register me"
+        android:id="@+id/btn_reg"
+        android:layout_marginLeft="130dp" />
+</GridLayout>

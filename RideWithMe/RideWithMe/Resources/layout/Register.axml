@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:rowCount="10">
+    <TextView
+        android:text="User Registration"
+        android:textSize="20sp"
+        android:id="@+id/label_userreg"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="3" />
+    <TextView
+        android:text="First name :"
+        android:id="@+id/label_fname"
+        android:layout_marginLeft="20dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="right" />
+    <EditText
+        android:id="@+id/input_fname"
+        android:layout_marginRight="20dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="Last name :"
+        android:id="@+id/label_lname"
+        android:layout_marginLeft="20dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="right" />
+    <EditText
+        android:id="@+id/input_lname"
+        android:layout_marginRight="20dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="Phone number :"
+        android:id="@+id/label_phone"
+        android:layout_marginLeft="20dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="right" />
+    <EditText
+        android:inputType="phone"
+        android:id="@+id/input_phone"
+        android:layout_marginRight="20dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="Email address :"
+        android:id="@+id/label_emailreg"
+        android:layout_marginLeft="20dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="right" />
+    <EditText
+        android:inputType="textEmailAddress"
+        android:id="@+id/input_emailreg"
+        android:layout_marginRight="20dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="Password :"
+        android:id="@+id/label_passreg"
+        android:layout_marginLeft="20dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="right" />
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/input_passreg"
+        android:layout_marginRight="20dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="Vehicle type :"
+        android:id="@+id/label_vtype"
+        android:layout_marginLeft="20dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="right" />
+    <EditText
+        android:id="@+id/input_vtype"
+        android:layout_marginRight="20dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="License plate :"
+        android:id="@+id/label_plate"
+        android:layout_marginLeft="20dp"
+        android:layout_columnWeight="1"
+        android:layout_gravity="right" />
+    <EditText
+        android:id="@+id/input_plate"
+        android:layout_marginRight="20dp"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="2" />
+    <TextView
+        android:text="Note : Driver login access is enabled when you register vehicle information."
+        android:id="@+id/textView9"
+        android:layout_marginLeft="20dp"
+        android:layout_columnSpan="2" />
+    <Button
+        android:text="Submit"
+        android:id="@+id/btn_reg"
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="200dp" />
+</GridLayout>
