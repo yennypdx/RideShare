@@ -2,61 +2,81 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rwm_bg"
     android:columnCount="2"
     android:rowCount="10">
     <TextView
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:text="Email:"
         android:id="@+id/label_email"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp" />
     <EditText
         android:inputType="textEmailAddress"
         android:id="@+id/input_email"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
     <TextView
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:text="Password:"
         android:id="@+id/label_passwd"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
     <EditText
         android:inputType="textPassword"
         android:id="@+id/input_passwd"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
     <TextView
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:text="Login as:"
         android:id="@+id/label_login"
         android:layout_marginLeft="150dp"
         android:layout_marginRight="150dp"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginTop="25dp" />
     <Button
         android:text="Rider"
         android:id="@+id/btn_rider"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp" />
     <Button
         android:text="Driver"
         android:id="@+id/btn_driver"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp" />
     <Button
         android:text="Admin"
         android:id="@+id/btn_admin"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp" />
     <TextView
         android:text="Not registered yet?"
         android:id="@+id/label_notreg"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="100dp"
         android:layout_columnWeight="1"
-        android:layout_columnSpan="2" />
+        android:layout_columnSpan="2"
+        android:layout_marginRight="100dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp" />
     <Button
         android:text="Register me"
-        android:id="@+id/btn_reg"
+        android:id="@+id/btn_regme"
         android:layout_marginLeft="130dp" />
 </GridLayout>
