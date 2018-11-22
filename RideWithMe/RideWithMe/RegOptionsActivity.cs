@@ -15,56 +15,58 @@ namespace RideWithMe
     [Activity(Label = "RegOptionsActivity")]
     public class RegOptionsActivity : Activity
     {
+        bool cb_riderValue = false;
+        bool cb_driverValue = false;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.RegOptions);
 
-            bool cb_riderValue = false;
             CheckBox cb_rider = FindViewById<CheckBox>(Resource.Id.cb_rider);
             cb_rider.CheckedChange += (sender, args) =>
             {
-                if (!args.IsChecked)
+                if (args.IsChecked)
                 {
                     cb_riderValue = true;
                 }
             };
 
-            bool cb_driverValue = false;
             CheckBox cb_driver = FindViewById<CheckBox>(Resource.Id.cb_driver);
             cb_driver.CheckedChange += (sender, args) =>
             {
-                if (!args.IsChecked)
+                if (args.IsChecked)
                 {
                     cb_driverValue = true;
                 }
             };
 
             Button btnNext = FindViewById<Button>(Resource.Id.btn_next);
-            if (cb_riderValue == true)
+            btnNext.Click += CheckOptions;
+        }
+
+        private void CheckOptions(object sender, EventArgs e)
+        {
+            if (cb_riderValue == true && cb_driverValue == false)
             {
-                btnNext.Click += NextToRegRider;
+                Intent intent1 = new Intent(this, typeof(RegisterRiderActivity));
+                StartActivity(intent1);
             }
-            else if (cb_driverValue == true)
+            else if (cb_riderValue == false && cb_driverValue == true)
             {
-                btnNext.Click += NextToRegDriver;
+                Intent intent2 = new Intent(this, typeof(RegisterDriverActivity));
+                StartActivity(intent2);
+            }
+            else if (cb_riderValue == true && cb_driverValue == true)
+            {
+                Intent intent3 = new Intent(this, typeof(RegisterDriverActivity));
+                StartActivity(intent3);
             }
             else
             {
-                btnNext.Click += NextToRegDriver;
+                //as default when none were chosen
+                Intent intent4 = new Intent(this, typeof(RegisterRiderActivity));
+                StartActivity(intent4);
             }
-        }
-
-        private void NextToRegDriver(object sender, EventArgs e)
-        {
-            Intent intent1 = new Intent(this, typeof(RegisterDriverActivity));
-            StartActivity(intent1);
-        }
-
-        private void NextToRegRider(object sender, EventArgs e)
-        {
-            Intent intent2 = new Intent(this, typeof(RegisterRiderActivity));
-            StartActivity(intent2);
-        }
+        }        
     }
 }

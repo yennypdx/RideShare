@@ -4,17 +4,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/rwm_bg"
     android:columnCount="3"
-    android:rowCount="10">
+    android:rowCount="10"
+    android:minWidth="25px"
+    android:minHeight="25px">
     <TextView
         android:text="Driver Registration"
         android:textSize="20sp"
         android:id="@+id/label_userreg"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
         android:layout_columnWeight="1"
         android:layout_columnSpan="3"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_gravity="center" />
     <TextView
         android:text="First name :"
         android:id="@+id/label_fname"
@@ -101,6 +104,6 @@
         android:layout_columnSpan="3"
         android:layout_marginTop="40dp"
         android:layout_gravity="fill"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="70dp"
         android:layout_marginEnd="50dp" />
 </GridLayout>

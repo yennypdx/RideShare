@@ -21,19 +21,50 @@ namespace RideWithMe
 
         private void SubmitDataButton_Click(object sender, EventArgs e)
         {
-            //sql-lite to insert data into tables
-            
-
-        }
-        
-        private void InsertDataAsDriver()
-        {
             //to be a DRIVER MUST HAVE: firstname, lastname, email, passwd, phone, vehicle type, plate number
             //insertion to User table and Driver table.
             //copy the userId to Rider table and Driver table
-            //const string connectionstring = @"Data Source = RideShareDB.sqlite; Version = 3;";
+            const string connectionstring =
+                @"Data Source = C:\Users\Yenny Wright\Desktop\CST324 TermProject\RideShareDB.sqlite; Version = 3;";
 
-            //SQLiteConnection connection = new SQLiteConnection(connectionstring);
+            string fnameparam = FindViewById(Resource.Id.input_fname).ToString();
+            string lnameparam = FindViewById(Resource.Id.input_lname).ToString();
+            string emailparam = FindViewById(Resource.Id.input_emailreg).ToString();
+            string passwdparam = FindViewById(Resource.Id.input_passreg).ToString();
+            string phoneparam = FindViewById(Resource.Id.input_phone).ToString();
+            string vtypeparam = FindViewById(Resource.Id.input_vtype).ToString();
+            string plateparam = FindViewById(Resource.Id.input_plate).ToString();
+
+            var queryInsertToUserTable = "INSERT INTO User (FirstName, LastName, LoginEmail, Passwd, PhoneNumber ) " +
+                                         "VALUES ({fnameparam}, {lnameparam}, {emailparam}, {passwdparam}, {phoneparam})";
+            var queryGetUserId = "SELECT UserId FROM User WHERE LoginEmail = {emailparam}";
+            var queryInsertToDriverTable = "INSERT INTO Driver (UserId, VehicleType, LicensePlate) VALUES ({userId}, {vtypeparam}, {plateparam})";
+            var connection = new SQLiteConnection(connectionstring);
+
+            try
+            {
+                connection.Open();
+                SQLiteCommand commandInsertUser = new SQLiteCommand(queryInsertToUserTable, connection);
+                commandInsertUser.ExecuteNonQuery();
+                SQLiteCommand commandGetId = new SQLiteCommand(queryGetUserId, connection);
+                SQLiteCommand commandInsertDriver = new SQLiteCommand(queryInsertToDriverTable, connection);
+
+                var userId = 0;
+                var result = commandGetId.ExecuteReader();
+                if (result.Read())
+                {
+                    userId = result.GetInt32(result.GetOrdinal("UserId"));
+                }
+                connection.Close();
+
+                connection.Open();
+                commandInsertDriver.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (SQLiteException ex)
+            {
+                System.Diagnostics.Debug.WriteLine("SQLite Error.", ex.Message);
+            }
         }
     }
 }
