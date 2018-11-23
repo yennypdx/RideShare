@@ -27,13 +27,13 @@ namespace RideWithMe
             const string connectionstring =
                 @"Data Source = C:\Users\Yenny Wright\Desktop\CST324 TermProject\RideShareDB.sqlite; Version = 3;";
 
-            string fnameparam = FindViewById(Resource.Id.input_fname).ToString();
-            string lnameparam = FindViewById(Resource.Id.input_lname).ToString();
-            string emailparam = FindViewById(Resource.Id.input_emailreg).ToString();
-            string passwdparam = FindViewById(Resource.Id.input_passreg).ToString();
-            string phoneparam = FindViewById(Resource.Id.input_phone).ToString();
-            string vtypeparam = FindViewById(Resource.Id.input_vtype).ToString();
-            string plateparam = FindViewById(Resource.Id.input_plate).ToString();
+            string fnameparam = FindViewById<EditText>(Resource.Id.input_fname).Text;
+            string lnameparam = FindViewById<EditText>(Resource.Id.input_lname).Text;
+            string emailparam = FindViewById<EditText>(Resource.Id.input_emailreg).Text;
+            string passwdparam = FindViewById<EditText>(Resource.Id.input_passreg).Text;
+            string phoneparam = FindViewById<EditText>(Resource.Id.input_phone).Text;
+            string vtypeparam = FindViewById<EditText>(Resource.Id.input_vtype).Text;
+            string plateparam = FindViewById<EditText>(Resource.Id.input_plate).Text;
 
             var queryInsertToUserTable = "INSERT INTO User (FirstName, LastName, LoginEmail, Passwd, PhoneNumber ) " +
                                          "VALUES ({fnameparam}, {lnameparam}, {emailparam}, {passwdparam}, {phoneparam})";

@@ -1,9 +1,8 @@
 ﻿using System;
-using SQLite;
 using System.Data.SQLite;
-
 using Android.App;
 using Android.OS;
+using Android.Widget;
 
 namespace RideWithMe
 {
@@ -14,6 +13,9 @@ namespace RideWithMe
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.RegistrationRider);
+
+            Button btnRSubmitData = FindViewById<Button>(Resource.Id.btn_reg);
+            btnRSubmitData.Click += SubmitDataButton_Click;
         }
 
         private void SubmitDataButton_Click(object sender, EventArgs e)
@@ -23,20 +25,19 @@ namespace RideWithMe
             const string connectionstring =
                 @"Data Source = C:\Users\Yenny Wright\Desktop\CST324 TermProject\RideShareDB.sqlite; Version = 3;";
 
-            string fnameparam = FindViewById(Resource.Id.input_fname).ToString();
-            string lnameparam = FindViewById(Resource.Id.input_lname).ToString();
-            string emailparam = FindViewById(Resource.Id.input_emailreg).ToString();
-            string passwdparam = FindViewById(Resource.Id.input_passreg).ToString();
-            string phoneparam = FindViewById(Resource.Id.input_phone).ToString();
+            string fnameparam = FindViewById<EditText>(Resource.Id.input_fname).Text;
+            string lnameparam = FindViewById<EditText>(Resource.Id.input_lname).Text;
+            string emailparam = FindViewById<EditText>(Resource.Id.input_emailreg).Text;
+            string passwdparam = FindViewById<EditText>(Resource.Id.input_passreg).Text;
+            string phoneparam = FindViewById<EditText>(Resource.Id.input_phone).Text;
 
             var queryInsertToUserTable = "INSERT INTO User (FirstName, LastName, LoginEmail, Passwd, PhoneNumber) " +
                                          "VALUES ({fnameparam}, {lnameparam}, {emailparam}, {passwdparam}, {phoneparam})";
             var queryGetUserId = "SELECT UserId FROM User WHERE LoginEmail = {emailparam}";
             var queryInsertToRiderTable = "INSERT INTO Rider (UserId) VALUES ({userId})";
-            var connection = new SQLiteConnection(connectionstring);
-
             try
             {
+                var connection = new SQLiteConnection(connectionstring);
                 connection.Open();
                 SQLiteCommand commandInsertUser = new SQLiteCommand(queryInsertToUserTable, connection);
                 commandInsertUser.ExecuteNonQuery();
