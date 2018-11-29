@@ -21,50 +21,7 @@ namespace RideWithMe
 
         private void SubmitDataButton_Click(object sender, EventArgs e)
         {
-            //to be a DRIVER MUST HAVE: firstname, lastname, email, passwd, phone, vehicle type, plate number
-            //insertion to User table and Driver table.
-            //copy the userId to Rider table and Driver table
-            const string connectionstring =
-                @"Data Source = C:\Users\Yenny Wright\Desktop\CST324 TermProject\RideShareDB.sqlite; Version = 3;";
-
-            string fnameparam = FindViewById<EditText>(Resource.Id.input_fname).Text;
-            string lnameparam = FindViewById<EditText>(Resource.Id.input_lname).Text;
-            string emailparam = FindViewById<EditText>(Resource.Id.input_emailreg).Text;
-            string passwdparam = FindViewById<EditText>(Resource.Id.input_passreg).Text;
-            string phoneparam = FindViewById<EditText>(Resource.Id.input_phone).Text;
-            string vtypeparam = FindViewById<EditText>(Resource.Id.input_vtype).Text;
-            string plateparam = FindViewById<EditText>(Resource.Id.input_plate).Text;
-
-            var queryInsertToUserTable = "INSERT INTO User (FirstName, LastName, LoginEmail, Passwd, PhoneNumber ) " +
-                                         "VALUES ({fnameparam}, {lnameparam}, {emailparam}, {passwdparam}, {phoneparam})";
-            var queryGetUserId = "SELECT UserId FROM User WHERE LoginEmail = {emailparam}";
-            var queryInsertToDriverTable = "INSERT INTO Driver (UserId, VehicleType, LicensePlate) VALUES ({userId}, {vtypeparam}, {plateparam})";
-            var connection = new SQLiteConnection(connectionstring);
-
-            try
-            {
-                connection.Open();
-                SQLiteCommand commandInsertUser = new SQLiteCommand(queryInsertToUserTable, connection);
-                commandInsertUser.ExecuteNonQuery();
-                SQLiteCommand commandGetId = new SQLiteCommand(queryGetUserId, connection);
-                SQLiteCommand commandInsertDriver = new SQLiteCommand(queryInsertToDriverTable, connection);
-
-                var userId = 0;
-                var result = commandGetId.ExecuteReader();
-                if (result.Read())
-                {
-                    userId = result.GetInt32(result.GetOrdinal("UserId"));
-                }
-                connection.Close();
-
-                connection.Open();
-                commandInsertDriver.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (SQLiteException ex)
-            {
-                System.Diagnostics.Debug.WriteLine("SQLite Error.", ex.Message);
-            }
+           
         }
     }
 }

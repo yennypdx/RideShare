@@ -19,6 +19,14 @@ namespace RideWithMe
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Rider);
+
+            //Button btnSendRequest = FindViewById<Button>(Resource.Id.btn_sendriderRequest);
+            //btnSendRequest.Click += SendRequestButton_Click;
+        }
+
+        private void SendRequestButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

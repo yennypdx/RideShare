@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@drawable/rwm_bg"
+    android:background="@drawable/final_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
@@ -36,7 +36,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/input_riderDate"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp" />
+        android:layout_marginRight="25dp"
+        android:hint="eg. 11-25-2018" />
     <TextView
         android:text="Time :"
         android:layout_width="match_parent"
@@ -51,7 +52,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/input_riderTime"
         android:layout_marginRight="25dp"
-        android:layout_marginLeft="25dp" />
+        android:layout_marginLeft="25dp"
+        android:hint="eg. 14:15" />
     <TextView
         android:text="Pick-up location :"
         android:layout_width="match_parent"
@@ -66,7 +68,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/input_pickup"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp" />
+        android:layout_marginRight="25dp"
+        android:hint="eg. 123 String Lane, Wilsonville" />
     <TextView
         android:text="Drop-off location :"
         android:layout_width="match_parent"
@@ -81,13 +84,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/input_dropoff"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp" />
-    <Button
-        android:text="Send My Request"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_sendriderRequest"
-        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
+        android:hint="eg. OIT Wilsonville Campus" />
+    <ImageButton
+        android:id="@+id/btn_SubmitReq"
+        android:src="@drawable/submitbutton"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp" />
+        android:layout_marginTop="25dp" />
 </LinearLayout>

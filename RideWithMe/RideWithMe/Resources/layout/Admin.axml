@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@drawable/rwm_bg"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/final_bg"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:paddingTop="1dp"
+    android:paddingRight="1dp"
+    android:paddingLeft="1dp">
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="1">
+        <TableRow
+            android:id="@+id/tableRow1">
+            <TextView
+                android:text="Welcome Admin!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_weladmin"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="100dp" />
+        </TableRow>
+        <TableRow>
+            <EditText
+                android:id="@+id/input_txtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:hint="Enter User's last name" />
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#0f87ff"
+                android:layout_marginRight="10dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:text="Search"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:minHeight="0dp"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </TableRow>
+    </TableLayout>
+    <ListView
+        android:id="@+id/user_listView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableLayout"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp" />
+</RelativeLayout>

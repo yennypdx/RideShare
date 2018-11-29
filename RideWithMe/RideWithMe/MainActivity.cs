@@ -3,6 +3,7 @@ using Android.App;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using Android.InputMethodServices;
 
 namespace RideWithMe
 {
@@ -14,8 +15,8 @@ namespace RideWithMe
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
 
-            Button btnRegister = FindViewById<Button>(Resource.Id.btn_regme);
-            btnRegister.Click += RegisterMeButton_Click;
+            TextView txtRegister = FindViewById<TextView>(Resource.Id.txtReg);
+            txtRegister.Click += NewUserRegistration_Click;
             
             Button btnRider = FindViewById<Button>(Resource.Id.btn_rider);
             btnRider.Click += RiderButton_Click;
@@ -27,7 +28,7 @@ namespace RideWithMe
             btnAdmin.Click += AdminButton_Click;
         }
 
-        private void RegisterMeButton_Click(object sender, EventArgs e)
+        private void NewUserRegistration_Click(object sender, EventArgs e)
         {
             Intent intent1 = new Intent(this, typeof(RegOptionsActivity));
             StartActivity(intent1);

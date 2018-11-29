@@ -86,16 +86,24 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Payment.cs" />
     <Compile Include="RegisterRiderActivity.cs" />
     <Compile Include="AdminActivity.cs" />
     <Compile Include="DriverActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="RegisterDriverActivity.cs" />
     <Compile Include="RegOptionsActivity.cs" />
+    <Compile Include="Request.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rider.cs" />
     <Compile Include="RiderActivity.cs" />
-    <Compile Include="UserDatabase.cs" />
+    <Compile Include="RideWithMeDbHelper.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -139,15 +147,10 @@
     <AndroidResource Include="Resources\drawable\rmwicon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\rwm_bg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="x64\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <AndroidResource Include="Resources\drawable\final_bg.png" />
+    <AndroidResource Include="Resources\drawable\submitbutton.png" />
+    <Content Include="x64\SQLite.Interop.dll" />
+    <Content Include="x86\SQLite.Interop.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

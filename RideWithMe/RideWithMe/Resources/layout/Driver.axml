@@ -1,23 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@drawable/rwm_bg"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/final_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
-    <TextView
-        android:text="Welcome Driver!"
+    android:descendantFocusability="beforeDescendants"
+    android:paddingTop="1dp"
+    android:paddingRight="1dp"
+    android:paddingLeft="1dp">
+    <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/label_weldriver"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:layout_marginTop="20dp" />
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:text="Welcome Driver!"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_weldriver"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginTop="20dp" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:text="Accept Request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_acceptRequest"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp" />
+        </TableRow>
+    </TableLayout>
     <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/Text_listfromDB" />
-</LinearLayout>
+        android:id="@+id/output_listView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tableLayout"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp" />
+</RelativeLayout>

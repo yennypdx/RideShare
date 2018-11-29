@@ -19,6 +19,8 @@ namespace RideWithMe
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Driver);
+
+            //Button btnAcceptReq = FindViewById<Button>(Resource.Id.)
         }
     }
 }

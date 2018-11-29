@@ -12,7 +12,10 @@ using Android.Widget;
 
 namespace RideWithMe
 {
-    class UserDatabase
+    public class Vehicle
     {
+        public int VehicleId { get; set; }
+        public string VehicleType { get; set; }
+        public string LicensePlate { get; set; }
     }
 }
